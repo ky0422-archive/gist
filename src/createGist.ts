@@ -7,21 +7,20 @@ export default async (
     token: string,
     options?: GistOptions
 ): Promise<GistResponse> => {
-    return await request<GistResponse>("https://api.github.com/gists", {
-        method: "POST",
-        headers: {
-            "content-type": "application/json",
-            accept: "application/vnd.github.v3+json",
-            Authorization: `Bearer ${token}`,
-        },
-        data: {
-            description: description,
-            files: {
-                ...files,
+    return await request<GistResponse>(
+        "https://api.github.com/gists",
+        token,
+        "POST",
+        {
+            data: {
+                description: description,
+                files: {
+                    ...files,
+                },
+                public: options?.secret ? false : true,
             },
-            public: options?.secret ? false : true,
-        },
-    })
+        }
+    )
         .then((response) => {
             return Promise.resolve(response);
         })
