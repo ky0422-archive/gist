@@ -17,7 +17,7 @@ export default async (
                 files: {
                     ...files,
                 },
-                public: options?.secret ? false : true,
+                public: options?.secret ? true : false
             },
         }
     )
