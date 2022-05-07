@@ -103,7 +103,7 @@ await gist
 # Example
 
 ```ts
-import Gist from "./index";
+import Gist from "@tsukiroku/gist";
 
 (async () => {
     const gist = new Gist("token");
