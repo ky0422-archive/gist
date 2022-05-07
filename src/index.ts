@@ -7,6 +7,9 @@ export default class Gist implements IGist {
     public readonly token: string;
 
     constructor(token: string) {
+        if (!token || token === "token") {
+            throw new Error("Token required");
+        }
         this.token = token;
     }
 
