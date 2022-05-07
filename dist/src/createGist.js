@@ -20,7 +20,7 @@ exports.default = async (files, description, token, options) => {
             public: options?.secret ? false : true,
         },
     })
-        .then(response => {
+        .then((response) => {
         return Promise.resolve(response);
     })
         .catch((err) => {
