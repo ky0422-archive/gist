@@ -7,7 +7,7 @@ export default async (
     token: string,
     options?: GistOptions
 ): Promise<GistResponse> => {
-    return await request("https://api.github.com/gists", {
+    return await request<GistResponse>("https://api.github.com/gists", {
         method: "POST",
         headers: {
             "content-type": "application/json",
@@ -22,8 +22,8 @@ export default async (
             public: options?.secret ? false : true,
         },
     })
-        .then((res) => {
-            return Promise.resolve(res);
+        .then((response) => {
+            return Promise.resolve(response);
         })
         .catch((err) => {
             return Promise.reject(err);
