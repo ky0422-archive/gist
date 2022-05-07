@@ -11,7 +11,7 @@ exports.default = async (files, description, token, options) => {
             files: {
                 ...files,
             },
-            public: options?.secret ? false : true,
+            public: options?.secret ? true : false
         },
     })
         .then((response) => {
