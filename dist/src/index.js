@@ -4,6 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const createGist_1 = __importDefault(require("./createGist"));
+const deleteGist_1 = __importDefault(require("./deleteGist"));
+const getGist_1 = __importDefault(require("./getGist"));
 class Gist {
     constructor(token) {
         this.token = token;
@@ -12,10 +14,10 @@ class Gist {
         return (0, createGist_1.default)(files, description, this.token, options);
     }
     delete(id) {
-        throw new Error("Method not implemented.");
+        return (0, deleteGist_1.default)(id, this.token);
     }
     get(id) {
-        throw new Error("Method not implemented.");
+        return (0, getGist_1.default)(id, this.token);
     }
 }
 exports.default = Gist;
