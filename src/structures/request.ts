@@ -3,8 +3,8 @@ import axios, { AxiosRequestConfig } from "axios";
 export default async <T>(
     url: string,
     options: AxiosRequestConfig
-): Promise<any> => {
-    await axios
+): Promise<T> => {
+    return await axios
         .request<T>({
             url,
             ...options,
