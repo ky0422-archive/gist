@@ -26,9 +26,9 @@ const gist = new Gist("token");
 
 | Parameter     | Type        |
 | ------------- | ----------- |
-| `files`       | GistFile    |
-| `description` | string      |
-| `options`     | GistOptions |
+| `files`       |`GistFile`   |
+| `description` |`string`     |
+| `options`     |`GistOptions`|
 
 > **GistFile**
 >
@@ -68,7 +68,7 @@ await gist
 
 | Parameter | Type   |
 | --------- | ------ |
-| `id`      | number |
+| `id`      |`number`|
 
 > **return:** [`Promise<GistResponse>`](./src/types.ts)
 
@@ -85,7 +85,7 @@ await gist
 
 | Parameter | Type   |
 | --------- | ------ |
-| `id`      | number |
+| `id`      |`number`|
 
 ```ts
 await gist
