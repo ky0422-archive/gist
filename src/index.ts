@@ -1,14 +1,14 @@
-import { GistFile, GistOptions, GistResponse, IGist } from "./types";
-import createGist from "./createGist";
-import deleteGist from "./deleteGist";
-import getGist from "./getGist";
+import { GistFile, GistOptions, GistResponse, IGist } from './types';
+import createGist from './createGist';
+import deleteGist from './deleteGist';
+import getGist from './getGist';
 
 export default class Gist implements IGist {
     public readonly token: string;
 
     constructor(token: string) {
-        if (!token || token === "token") {
-            throw new Error("Token required");
+        if (!token || token === 'token') {
+            throw new Error('Token required');
         }
         this.token = token;
     }

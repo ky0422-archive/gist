@@ -1,13 +1,10 @@
-import request from "./structures/request";
+import request from './structures/request';
 
-export default async (
-    id: string,
-    token: string
-): Promise<{}> => {
+export default async (id: string, token: string): Promise<{}> => {
     return await request<{}>(
         `https://api.github.com/gists/${id}`,
         token,
-        "DELETE",
+        'DELETE',
         {}
     )
         .then((response) => {

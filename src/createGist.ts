@@ -1,5 +1,5 @@
-import request from "./structures/request";
-import { GistFile, GistOptions, GistResponse } from "./types";
+import request from './structures/request';
+import { GistFile, GistOptions, GistResponse } from './types';
 
 export default async (
     files: GistFile,
@@ -8,16 +8,16 @@ export default async (
     options?: GistOptions
 ): Promise<GistResponse> => {
     return await request<GistResponse>(
-        "https://api.github.com/gists",
+        'https://api.github.com/gists',
         token,
-        "POST",
+        'POST',
         {
             data: {
                 description: description,
                 files: {
                     ...files,
                 },
-                public: options?.secret ? true : false
+                public: options?.secret ? true : false,
             },
         }
     )

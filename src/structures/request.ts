@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, Method } from "axios";
+import axios, { AxiosRequestConfig, Method } from 'axios';
 
 export default async <T>(
     url: string,
@@ -11,8 +11,8 @@ export default async <T>(
             url,
             method,
             headers: {
-                "content-type": "application/json",
-                accept: "application/vnd.github.v3+json",
+                'content-type': 'application/json',
+                accept: 'application/vnd.github.v3+json',
                 Authorization: `Bearer ${token}`,
             },
             ...options,

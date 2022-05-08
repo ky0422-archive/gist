@@ -15,20 +15,20 @@ npm i @tsukiroku/gist
 > Account token required. See [Docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
 ```ts
-import Gist from "@tsukiroku/gist";
+import Gist from '@tsukiroku/gist';
 
-const gist = new Gist("token");
+const gist = new Gist('token');
 ```
 
 <br>
 
 ## Create Gist
 
-| Parameter     | Type        |
-| ------------- | ----------- |
-| `files`       |`GistFile`   |
-| `description` |`string`     |
-| `options`     |`GistOptions`|
+| Parameter     | Type          |
+| ------------- | ------------- |
+| `files`       | `GistFile`    |
+| `description` | `string`      |
+| `options`     | `GistOptions` |
 
 > **GistFile**
 >
@@ -50,10 +50,10 @@ const gist = new Gist("token");
 await gist
     .create(
         {
-            file_name: { content: "File Content" },
-            file_name_2: { content: "File Content 2" },
+            file_name: { content: 'File Content' },
+            file_name_2: { content: 'File Content 2' },
         },
-        "test file"
+        'test file'
         // { secret: true }
     )
     .then((res) => {
@@ -66,15 +66,15 @@ await gist
 
 ## Get Gist
 
-| Parameter | Type   |
-| --------- | ------ |
-| `id`      |`number`|
+| Parameter | Type     |
+| --------- | -------- |
+| `id`      | `number` |
 
 > **return:** [`Promise<GistResponse>`](./src/types.ts)
 
 ```ts
 await gist
-    .get("gist id")
+    .get('gist id')
     .then((res) => console.log(`gist description: ${res.description}`))
     .catch((err) => console.log(err));
 ```
@@ -83,14 +83,14 @@ await gist
 
 ## Delete Gist
 
-| Parameter | Type   |
-| --------- | ------ |
-| `id`      |`number`|
+| Parameter | Type     |
+| --------- | -------- |
+| `id`      | `number` |
 
 ```ts
 await gist
-    .delete("gist id")
-    .then((_) => console.log("deleted"))
+    .delete('gist id')
+    .then((_) => console.log('deleted'))
     .catch((err) => console.log(err));
 ```
 
@@ -103,20 +103,20 @@ await gist
 # Example
 
 ```ts
-import Gist from "@tsukiroku/gist";
+import Gist from '@tsukiroku/gist';
 
 (async () => {
-    const gist = new Gist("token");
+    const gist = new Gist('token');
 
-    let gist_id: string = "";
+    let gist_id: string = '';
 
     await gist
         .create(
             {
-                "index.ts": { content: "console.log('Hello, World!');" },
-                "main.rs": { content: "fn main() {}" },
+                'index.ts': { content: "console.log('Hello, World!');" },
+                'main.rs': { content: 'fn main() {}' },
             },
-            "test gist",
+            'test gist',
             { secret: true }
         )
         .then((res) => {
@@ -132,7 +132,7 @@ import Gist from "@tsukiroku/gist";
 
     await gist
         .delete(gist_id)
-        .then((_) => console.log("deleted"))
+        .then((_) => console.log('deleted'))
         .catch((err) => console.log(err));
 })();
 ```
