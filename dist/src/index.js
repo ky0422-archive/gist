@@ -8,6 +8,9 @@ const deleteGist_1 = __importDefault(require("./deleteGist"));
 const getGist_1 = __importDefault(require("./getGist"));
 class Gist {
     constructor(token) {
+        if (!token || token === 'token') {
+            throw new Error('Token required');
+        }
         this.token = token;
     }
     create(files, description, options) {
