@@ -5,13 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const request_1 = __importDefault(require("./structures/request"));
 exports.default = async (files, description, token, options) => {
-    return await (0, request_1.default)("https://api.github.com/gists", token, "POST", {
+    return await (0, request_1.default)('https://api.github.com/gists', token, 'POST', {
         data: {
             description: description,
             files: {
                 ...files,
             },
-            public: options?.secret ? true : false
+            public: options?.secret ? true : false,
         },
     })
         .then((response) => {
