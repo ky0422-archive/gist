@@ -28,7 +28,7 @@ const gist = new Gist('token');
 | ------------- | ------------- |
 | `files`       | `GistFile`    |
 | `description` | `string`      |
-| `options`     | `GistOptions` |
+| `options?`    | `GistOptions` |
 
 > **GistFile**
 >
