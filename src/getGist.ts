@@ -1,7 +1,10 @@
 import request from './structures/request';
-import { GistResponse } from './types';
+import { GistResponse, ReqRet } from './types';
 
-export default async (id: string, token: string): Promise<GistResponse> => {
+export default async (
+    id: string,
+    token: string
+): Promise<ReqRet<GistResponse>> => {
     return await request<GistResponse>(
         `https://api.github.com/gists/${id}`,
         token,
@@ -9,7 +12,10 @@ export default async (id: string, token: string): Promise<GistResponse> => {
         {}
     )
         .then((response) => {
-            return Promise.resolve(response);
+            return Promise.resolve({
+                data: response.data,
+                status: response.status,
+            });
         })
         .catch((err) => {
             return Promise.reject(err);
