@@ -1,4 +1,4 @@
-import { GistFile, GistOptions, GistResponse, IGist } from './types';
+import { GistFile, GistOptions, GistResponse, IGist, ReqRet } from './types';
 import createGist from './createGist';
 import deleteGist from './deleteGist';
 import getGist from './getGist';
@@ -17,15 +17,15 @@ export default class Gist implements IGist {
         files: GistFile,
         description: string,
         options?: GistOptions
-    ): Promise<GistResponse> {
+    ): Promise<ReqRet<GistResponse>> {
         return createGist(files, description, this.token, options);
     }
 
-    public delete(id: string): Promise<{}> {
+    public delete(id: string): Promise<ReqRet<any>> {
         return deleteGist(id, this.token);
     }
 
-    public get(id: string): Promise<GistResponse> {
+    public get(id: string): Promise<ReqRet<GistResponse>> {
         return getGist(id, this.token);
     }
 }
