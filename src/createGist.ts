@@ -1,12 +1,12 @@
 import request from './structures/request';
-import { GistFile, GistOptions, GistResponse } from './types';
+import { GistFile, GistOptions, GistResponse, ReqRet } from './types';
 
 export default async (
     files: GistFile,
     description: string,
     token: string,
     options?: GistOptions
-): Promise<GistResponse> => {
+): Promise<ReqRet<GistResponse>> => {
     return await request<GistResponse>(
         'https://api.github.com/gists',
         token,
