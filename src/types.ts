@@ -1,3 +1,5 @@
+import { HTTPStatusRes } from './structures/http_status';
+
 interface GistOptions {
     secret: boolean;
 }
@@ -53,10 +55,15 @@ interface GistResponse {
     truncated: boolean;
 }
 
+interface ReqRet<T> {
+    data?: T;
+    status: HTTPStatusRes;
+}
+
 interface GistFile {
     [key: string]: {
         content: string;
     };
 }
 
-export { GistOptions, IGist, GistResponse, GistFile };
+export { GistOptions, IGist, GistResponse, GistFile, ReqRet };
