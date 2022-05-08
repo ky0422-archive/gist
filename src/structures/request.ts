@@ -1,11 +1,13 @@
 import axios, { AxiosRequestConfig, Method } from 'axios';
+import { ReqRet } from '../types';
+import st from './http_status';
 
 export default async <T>(
     url: string,
     token: string,
     method: Method,
     options: AxiosRequestConfig
-): Promise<T> => {
+): Promise<ReqRet<T>> => {
     return await axios
         .request<T>({
             url,
@@ -18,7 +20,10 @@ export default async <T>(
             ...options,
         })
         .then((response) => {
-            return Promise.resolve(response.data);
+            return Promise.resolve({
+                data: response.data,
+                status: st(response.status),
+            });
         })
         .catch((error) => {
             return Promise.reject(error);
