@@ -100,7 +100,7 @@ await gist
 await gist
     .delete(gist_id)
     .then((res) => console.log(`Gist deleted, status: ${res.status.code}`))
-    .catch(errHandler);
+    .catch((err) => console.log(err));
 ```
 
 <br>
