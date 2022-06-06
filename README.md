@@ -12,8 +12,6 @@ npm i @tsukiroku/gist
 
 # Docs
 
-<br>
-
 ## Initialize
 
 > **Note:** Account token required. See [Docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
