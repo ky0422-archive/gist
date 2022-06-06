@@ -8,6 +8,7 @@
         "strict": true,
         "skipLibCheck": true,
         "declaration": true,
+        "allowJs": true
     },
-    "exclude": ["node_modules", "_*.ts"]
+    "exclude": ["node_modules"]
 }
