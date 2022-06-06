@@ -61,9 +61,7 @@ await gist
         'test file'
         // { secret: true }
     )
-    .then((res) => {
-        console.log(`Gist created: ${res.data!.id}`);
-    })
+    .then((res) => console.log(`Gist created: ${res.data!.id}`))
     .catch((err) => console.log(err));
 ```
 
@@ -81,6 +79,37 @@ await gist
 await gist
     .get('gist id')
     .then((res) => console.log(`gist description: ${res.data!.description}`))
+    .catch((err) => console.log(err));
+```
+
+<br>
+
+## Update Gist
+
+| Parameter     | Type          |
+| ------------- | ------------- |
+| `id`          | `number`      |
+| `files`       | `GistFile`    |
+| `description` | `string`      |
+| `options?`    | `GistOptions` |
+
+> **return:** [`Promise<ReqRet<{}>>`](./src/types.ts)
+>
+> **Note:** `res.data` is undefined.
+
+```ts
+await gist
+    .update(
+        'gist id',
+        {
+            file_name: { content: 'File Content' },
+            file_name_2: { content: 'File Content 2' },
+            file_name_3: { content: 'File Content 3' },
+        },
+        'test file - update'
+        // { secret: true }
+    )
+    .then((res) => console.log(`Gist updated: ${res.status.code}`))
     .catch((err) => console.log(err));
 ```
 
