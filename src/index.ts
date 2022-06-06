@@ -1,7 +1,7 @@
 import { GistFile, GistOptions, GistResponse, IGist, ReqRet } from './types';
-import createGist from './createGist';
-import deleteGist from './deleteGist';
-import getGist from './getGist';
+import createGist from './gist/create';
+import deleteGist from './gist/delete';
+import getGist from './gist/get';
 
 export default class Gist implements IGist {
     public readonly token: string;
