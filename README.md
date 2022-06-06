@@ -107,46 +107,6 @@ await gist
 
 ---
 
-<br>
-
-# Example
-
-```ts
-import Gist from '@tsukiroku/gist';
-
-const errHandler = (err: any) => console.log(err);
-
-(async () => {
-    const gist = new Gist('token');
-
-    let gist_id: string = '';
-
-    await gist
-        .create(
-            { 'hello.ts': { content: 'dd' }, 'hello.rs': { content: 'ddd' } },
-            'a test file',
-            { secret: true }
-        )
-        .then((res) => {
-            gist_id = res.data!.id;
-            console.log(`Gist created: ${gist_id}`);
-        })
-        .catch(errHandler);
-
-    await gist
-        .get(gist_id)
-        .then((res) =>
-            console.log(`Gist description: ${res.data!.description}`)
-        )
-        .catch(errHandler);
-
-    await gist
-        .delete(gist_id)
-        .then((res) => console.log(`Gist deleted, status: ${res.status.code}`))
-        .catch(errHandler);
-})();
-```
-
 # Status codes
 
 > **ref:** [http_status.ts](./src/structures/http_status.ts)
@@ -172,5 +132,7 @@ const errHandler = (err: any) => console.log(err);
 ---
 
 [**LICENSE: MIT**](./LICENSE)
+
+---
 
 > Click [here](https://docs.github.com/en/rest/gists) for more information on the github gists rest API.
