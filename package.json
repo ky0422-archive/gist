@@ -1,25 +1,30 @@
 {
-  "name": "@tsukiroku/gist",
-  "version": "1.0.2",
-  "description": "Asynchronous gist API wrapper",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "tsc && node dist/_test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tsukiroku/gist.git"
-  },
-  "keywords": [
-    "gist"
-  ],
-  "author": "tsukiroku",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tsukiroku/gist/issues"
-  },
-  "homepage": "https://github.com/tsukiroku/gist#readme",
-  "dependencies": {
-    "axios": "^0.27.2"
-  }
+    "name": "@tsukiroku/gist",
+    "version": "1.0.62",
+    "description": "Asynchronous gist API wrapper",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsc",
+        "test": "npm run build && node dist/_test.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tsukiroku/gist.git"
+    },
+    "keywords": [
+        "gist"
+    ],
+    "author": "tsukiroku",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/tsukiroku/gist/issues"
+    },
+    "homepage": "https://github.com/tsukiroku/gist#readme",
+    "dependencies": {
+        "axios": "^0.27.2"
+    },
+    "files": [
+        "dist/**/*"
+    ],
+    "types": "dist/index.d.ts"
 }
