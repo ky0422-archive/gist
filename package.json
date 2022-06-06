@@ -1,10 +1,10 @@
 {
     "name": "@tsukiroku/gist",
-    "version": "1.0.62",
+    "version": "1.0.7",
     "description": "Asynchronous gist API wrapper",
     "main": "dist/index.js",
     "scripts": {
-        "build": "tsc",
+        "build": "if [ -d dist ]; then rm -rf dist; tsc; else tsc; fi",
         "test": "npm run build && node dist/_test.js"
     },
     "repository": {
