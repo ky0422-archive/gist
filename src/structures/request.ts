@@ -7,8 +7,8 @@ export default async <T>(
     token: string,
     method: Method,
     options: AxiosRequestConfig
-): Promise<ReqRet<T>> => {
-    return await axios
+): Promise<ReqRet<T>> =>
+    await axios
         .request<T>({
             url,
             method,
@@ -19,13 +19,10 @@ export default async <T>(
             },
             ...options,
         })
-        .then((response) => {
-            return Promise.resolve({
+        .then((response) =>
+            Promise.resolve({
                 data: response.data,
                 status: st(response.status),
-            });
-        })
-        .catch((error) => {
-            return Promise.reject(error);
-        });
-};
+            })
+        )
+        .catch((error) => Promise.reject(error));
