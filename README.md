@@ -1,6 +1,5 @@
 -   [Gist API](./README.md#gist-api)
 -   [Docs](./README.md#docs)
--   [Examples](./README.md#example)
 -   [Status codes](./README.md#status-codes)
 
 # Gist API
