@@ -1,5 +1,5 @@
 import { GistFile, GistOptions, GistResponse, IGist, ReqRet } from './types';
-import { _create, _delete, _get } from './gist';
+import { _create, _delete, _get, _update } from './gist';
 
 export default class Gist implements IGist {
     public readonly token: string;
@@ -25,5 +25,14 @@ export default class Gist implements IGist {
 
     public get(id: string): Promise<ReqRet<GistResponse>> {
         return _get(id, this.token);
+    }
+
+    public update(
+        id: string,
+        files: GistFile,
+        description: string,
+        options?: GistOptions
+    ): Promise<ReqRet<any>> {
+        return _update(id, files, description, this.token, options);
     }
 }
