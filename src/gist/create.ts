@@ -15,6 +15,4 @@ export default async (
             },
             public: options?.secret ? true : false,
         },
-    })
-        .then((response) => Promise.resolve(response))
-        .catch((err) => Promise.reject(err));
+    });
