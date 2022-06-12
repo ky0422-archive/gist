@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/recalculated/gist.git"
+        "url": "git+https://github.com/tsukiroku/gist.git"
     },
     "keywords": [
         "gist"
@@ -17,9 +17,9 @@
     "author": "tsukiroku",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/recalculated/gist/issues"
+        "url": "https://github.com/tsukiroku/gist/issues"
     },
-    "homepage": "https://github.com/recalculated/gist#readme",
+    "homepage": "https://github.com/tsukiroku/gist#readme",
     "dependencies": {
         "axios": "^0.27.2"
     },
