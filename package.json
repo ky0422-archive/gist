@@ -9,17 +9,17 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/tsukiroku/gist.git"
+        "url": "git+https://github.com/ky0422/gist.git"
     },
     "keywords": [
         "gist"
     ],
-    "author": "tsukiroku",
+    "author": "ky0422",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/tsukiroku/gist/issues"
+        "url": "https://github.com/ky0422/gist/issues"
     },
-    "homepage": "https://github.com/tsukiroku/gist#readme",
+    "homepage": "https://github.com/ky0422/gist#readme",
     "dependencies": {
         "axios": "^0.27.2"
     },
