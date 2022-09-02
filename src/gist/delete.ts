@@ -1,5 +1,5 @@
-import request from '../structures/request';
-import { ReqRet } from '../types';
+import request from '../structures/request'
+import { ReqRet } from '../types'
 
 export default async (id: string, token: string): Promise<ReqRet<{}>> =>
     await request<{}>(`https://api.github.com/gists/${id}`, token, 'DELETE', {})
@@ -8,4 +8,4 @@ export default async (id: string, token: string): Promise<ReqRet<{}>> =>
                 status: response.status,
             })
         )
-        .catch((err) => Promise.reject(err));
+        .catch((err) => Promise.reject(err))

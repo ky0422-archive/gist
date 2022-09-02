@@ -1,38 +1,27 @@
-import { GistFile, GistOptions, GistResponse, IGist, ReqRet } from './types';
-import { _create, _delete, _get, _update } from './gist';
+import { GistFile, GistOptions, GistResponse, IGist, ReqRet } from './types'
+import { _create, _delete, _get, _update } from './gist'
 
 export default class Gist implements IGist {
-    public readonly token: string;
+    public readonly token: string
 
     constructor(token: string) {
-        if (!token || token === 'token') {
-            throw new Error('Token required');
-        }
-        this.token = token;
+        if (!token || token === 'token') throw new Error('Token required')
+        this.token = token
     }
 
-    public create(
-        files: GistFile,
-        description: string,
-        options?: GistOptions
-    ): Promise<ReqRet<GistResponse>> {
-        return _create(files, description, this.token, options);
+    public create(files: GistFile, description: string, options?: GistOptions): Promise<ReqRet<GistResponse>> {
+        return _create(files, description, this.token, options)
     }
 
     public delete(id: string): Promise<ReqRet<any>> {
-        return _delete(id, this.token);
+        return _delete(id, this.token)
     }
 
     public get(id: string): Promise<ReqRet<GistResponse>> {
-        return _get(id, this.token);
+        return _get(id, this.token)
     }
 
-    public update(
-        id: string,
-        files: GistFile,
-        description: string,
-        options?: GistOptions
-    ): Promise<ReqRet<any>> {
-        return _update(id, files, description, this.token, options);
+    public update(id: string, files: GistFile, description: string, options?: GistOptions): Promise<ReqRet<any>> {
+        return _update(id, files, description, this.token, options)
     }
 }

@@ -1,3 +1,3 @@
-import Gist from './src/index';
+import Gist from './src/index'
 
-export default Gist;
+export default Gist

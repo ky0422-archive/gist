@@ -17,43 +17,43 @@ export enum HTTPStatus {
 }
 
 export interface HTTPStatusRes {
-    code: HTTPStatus;
-    data: string;
+    code: HTTPStatus
+    data: string
 }
 
-const t = (v: HTTPStatus): HTTPStatusRes => ({ code: v, data: HTTPStatus[v] });
+const t = (v: HTTPStatus): HTTPStatusRes => ({ code: v, data: HTTPStatus[v] })
 
 export default (status: number): HTTPStatusRes => {
     switch (status) {
         case 200:
-            return t(HTTPStatus.OK);
+            return t(HTTPStatus.OK)
         case 201:
-            return t(HTTPStatus.CREATED);
+            return t(HTTPStatus.CREATED)
         case 204:
-            return t(HTTPStatus.NO_CONTENT);
+            return t(HTTPStatus.NO_CONTENT)
         case 304:
-            return t(HTTPStatus.NOT_MODIFIED);
+            return t(HTTPStatus.NOT_MODIFIED)
         case 400:
-            return t(HTTPStatus.BAD_REQUEST);
+            return t(HTTPStatus.BAD_REQUEST)
         case 401:
-            return t(HTTPStatus.UNAUTHORIZED);
+            return t(HTTPStatus.UNAUTHORIZED)
         case 403:
-            return t(HTTPStatus.FORBIDDEN);
+            return t(HTTPStatus.FORBIDDEN)
         case 404:
-            return t(HTTPStatus.NOT_FOUND);
+            return t(HTTPStatus.NOT_FOUND)
         case 409:
-            return t(HTTPStatus.CONFLICT);
+            return t(HTTPStatus.CONFLICT)
         case 422:
-            return t(HTTPStatus.VAILDATION_FAILED);
+            return t(HTTPStatus.VAILDATION_FAILED)
         case 500:
-            return t(HTTPStatus.INTERNAL_SERVER_ERROR);
+            return t(HTTPStatus.INTERNAL_SERVER_ERROR)
         case 502:
-            return t(HTTPStatus.BAD_GATEWAY);
+            return t(HTTPStatus.BAD_GATEWAY)
         case 503:
-            return t(HTTPStatus.SERVICE_UNAVAILABLE);
+            return t(HTTPStatus.SERVICE_UNAVAILABLE)
         case 504:
-            return t(HTTPStatus.GATEWAY_TIMEOUT);
+            return t(HTTPStatus.GATEWAY_TIMEOUT)
         default:
-            return t(HTTPStatus.UNKNOWN);
+            return t(HTTPStatus.UNKNOWN)
     }
-};
+}

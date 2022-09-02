@@ -1,13 +1,8 @@
-import axios, { AxiosRequestConfig, Method } from 'axios';
-import { ReqRet } from '../types';
-import st from './http_status';
+import axios, { AxiosRequestConfig, Method } from 'axios'
+import { ReqRet } from '../types'
+import st from './http_status'
 
-export default async <T>(
-    url: string,
-    token: string,
-    method: Method,
-    options: AxiosRequestConfig
-): Promise<ReqRet<T>> =>
+export default async <T>(url: string, token: string, method: Method, options: AxiosRequestConfig): Promise<ReqRet<T>> =>
     await axios
         .request<T>({
             url,
@@ -25,4 +20,4 @@ export default async <T>(
                 status: st(response.status),
             })
         )
-        .catch((error) => Promise.reject(error));
+        .catch((error) => Promise.reject(error))

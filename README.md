@@ -1,12 +1,12 @@
+# Gist API
+
+```console
+$ npm i @tsukiroku/gist
+```
+
 -   [Gist API](./README.md#gist-api)
 -   [Docs](./README.md#docs)
 -   [Status codes](./README.md#status-codes)
-
-# Gist API
-
-```sh
-npm i @tsukiroku/gist
-```
 
 ---
 
@@ -17,9 +17,9 @@ npm i @tsukiroku/gist
 > **Note:** Account token required. See [Docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
 ```ts
-import Gist from '@tsukiroku/gist';
+import Gist from '@tsukiroku/gist'
 
-const gist = new Gist('token');
+const gist = new Gist('token')
 ```
 
 <br>
@@ -59,7 +59,7 @@ await gist
         // { secret: true }
     )
     .then((res) => console.log(`Gist created: ${res.data!.id}`))
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
 ```
 
 <br>
@@ -76,7 +76,7 @@ await gist
 await gist
     .get('gist id')
     .then((res) => console.log(`gist description: ${res.data!.description}`))
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
 ```
 
 <br>
@@ -107,7 +107,7 @@ await gist
         // { secret: true }
     )
     .then((res) => console.log(`Gist updated: ${res.status.code}`))
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
 ```
 
 <br>
@@ -126,7 +126,7 @@ await gist
 await gist
     .delete(gist_id)
     .then((res) => console.log(`Gist deleted, status: ${res.status.code}`))
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
 ```
 
 <br>

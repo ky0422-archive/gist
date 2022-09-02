@@ -1,13 +1,7 @@
-import request from '../structures/request';
-import { GistFile, GistOptions, ReqRet } from '../types';
+import request from '../structures/request'
+import { GistFile, GistOptions, ReqRet } from '../types'
 
-export default async (
-    id: string,
-    files: GistFile,
-    description: string,
-    token: string,
-    options?: GistOptions
-): Promise<ReqRet<{}>> =>
+export default async (id: string, files: GistFile, description: string, token: string, options?: GistOptions): Promise<ReqRet<{}>> =>
     await request<{}>(`https://api.github.com/gists/${id}`, token, 'PATCH', {
         data: {
             description: description,
@@ -22,4 +16,4 @@ export default async (
                 status: response.status,
             })
         )
-        .catch((err) => Promise.reject(err));
+        .catch((err) => Promise.reject(err))

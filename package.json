@@ -1,6 +1,6 @@
 {
     "name": "@tsukiroku/gist",
-    "version": "1.0.73",
+    "version": "1.0.8",
     "description": "Asynchronous gist API wrapper",
     "main": "dist/index.js",
     "scripts": {
